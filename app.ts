@@ -1,14 +1,15 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+import * as express from "express";
+import * as path from "path"
+import * as favicon from "serve-favicon"
+import * as logger from "morgan"
+import * as cookieParser from "cookie-parser"
+import * as bodyParser from "body-parser"
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+import * as routes from "./routes/index"
+import * as users from "./routes/users" 
+import * as bla from "./routes/bla"
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -22,14 +23,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', routes.router);
+app.use('/users', users.router);
+app.use('/bla',bla.router);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+  //var err = new Error('Not Found');
   //err.status = 404;
-  next(err);
+  //next(err);
 });
 
 // error handlers
