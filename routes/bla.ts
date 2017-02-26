@@ -10,7 +10,7 @@ bla.get('/', function(req, res, next) {
   let c1 = new C1(1,"a", false);
   let c2 = C1.make({c: "bla"});
   let n = C1.count;
-  res.render('bla', { title: 'A bla bla page'});
+  res.render('bla', { title: 'A bla page' + n.toString()});
 });
 
 

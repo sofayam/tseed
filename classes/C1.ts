@@ -17,9 +17,6 @@ export class C1 {
         return new C1(obj.a, obj.c, true);
     }
 
-    public fake(): string {
-        return this.b
-    }
 
 }
 
