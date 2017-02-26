@@ -1,8 +1,8 @@
 import * as express from 'express';
-export var router = express.Router();
+export var users = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+users.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 

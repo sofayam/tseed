@@ -5,9 +5,9 @@ import * as logger from "morgan"
 import * as cookieParser from "cookie-parser"
 import * as bodyParser from "body-parser"
 
-import * as routes from "./routes/index"
-import * as users from "./routes/users" 
-import * as bla from "./routes/bla"
+import { index } from "./routes/index"
+import { users } from "./routes/users" 
+import { bla } from "./routes/bla"
 var app = express();
 
 
@@ -23,9 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/', routes.router);
-app.use('/users', users.router);
-app.use('/bla',bla.router);
+app.use('/', index);
+app.use('/users', users);
+app.use('/bla',bla);
 
 // catch 404 and forward to error handler
 app.use(function(err, req, res, next) {

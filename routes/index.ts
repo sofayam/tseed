@@ -1,8 +1,8 @@
 import * as express from 'express';
-export var router = express.Router();
+export var index = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+index.get('/', function(req, res, next) {
   res.render('index', { title: 'Express with Typescript!' });
 });
 
