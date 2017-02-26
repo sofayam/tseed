@@ -4,6 +4,7 @@
         "sourceMap": true,
         //"watch": true,
         "allowJs": true,
-        "outDir": "generated"
+        "outDir": "generated",
+        "strictNullChecks": true
     }
 }
