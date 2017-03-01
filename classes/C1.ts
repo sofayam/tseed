@@ -1,3 +1,6 @@
+
+import { foo } from './foo';
+
 export class C1 {
 
     static count: number = 0;
@@ -28,6 +31,28 @@ export class C1 {
     
 }
 
+class DC {
+    a : number;
+}
+interface DI {
+    b : number;
+}
+interface DIX extends DI {
+    c : number;
+}
+class DIXC implements DIX {
+    c : number; 
+    b : number;
+}
+class DIXC1 extends DIXC {
+    d: number;
+}
+
+let dc = new DC();
+let dix: DIX = {b: 1, c:2};
+
+//let di = new DI();
+dc.a = 1;
 enum E {A,B,C}
 
 enum F {D,E,F}
@@ -61,11 +86,14 @@ let ores = overl(1)
 
 ores = 1;
 
-function callsig (tst: string, fun: (text: string) => number): number {
+type textono = (string) => number
+
+function callsig (tst: string, fun: textono): number {
     return fun(tst);
 }
 
 function ln(s: string): number {
+    foo(1);
     return s.length
 }
 
