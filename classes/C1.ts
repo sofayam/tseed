@@ -1,5 +1,5 @@
 
-import { foo } from './foo';
+import { foo, bar } from './foo';
 
 export class C1 {
 
@@ -94,6 +94,7 @@ function callsig (tst: string, fun: textono): number {
 
 function ln(s: string): number {
     foo(1);
+    // bar("bla") this is declared in the d.ts but not implemented
     return s.length
 }
 
