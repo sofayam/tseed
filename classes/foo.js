@@ -1,2 +1,5 @@
 
-exports.foo = function(x) { return x++ }
+exports.foo = function(x) { 
+    console.log ("bite me");
+    return x++ 
+}
