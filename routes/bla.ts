@@ -1,8 +1,9 @@
 import { Router } from 'express';
+export var bla = Router();
 
 import {C1} from '../classes/C1'
 
-export var bla = Router();
+
 
 interface I1 {
   prop: number;
