@@ -8,6 +8,7 @@ import * as bodyParser from "body-parser"
 import { index } from "./routes/index"
 import { users } from "./routes/users" 
 import { bla } from "./routes/bla"
+import { vis } from "./routes/vis"
 var app = express();
 
 
@@ -21,10 +22,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
-
+// app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname,"../node_modules")))
 app.use('/', index);
 app.use('/users', users);
+app.use('/demo', vis);
 app.use('/bla',bla);
 // catch 404 and forward to error handler
 app.use(function(err, req, res, next) {
