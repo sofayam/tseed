@@ -9,3 +9,4 @@ Investigate best use of typescript abilities in dealing with
 incoming JSON and MongoDB.
 
 
+test
